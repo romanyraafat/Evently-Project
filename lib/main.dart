@@ -37,7 +37,7 @@ class MyApp extends StatelessWidget {
       ],
       // locale: Locale('ar'),
       locale: Locale(context.watch<AppLanguageProvider>().appLanguage),
-      initialRoute: RouteNames.homeView,
+      // initialRoute: RouteNames.homeView,
       debugShowCheckedModeBanner: false,
       onGenerateRoute: AppRouter.onGenerateRoute,
       theme: AppTheme.lightTheme,
