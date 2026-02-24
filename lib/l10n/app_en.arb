@@ -1,0 +1,12 @@
+{
+  "language":"Language",
+  "language_type":"English",
+  "appTitle": "My App",
+  "welcomeMessage": "Welcome!",
+  "chooseLanguage": "Choose Language",
+  "arabic": "Arabic",
+  "english": "English",
+  "login": "Login",
+  "signup": "Sign Up",
+  "logout": "Logout"
+}

@@ -1,0 +1,12 @@
+{
+  "language":"اللغه",
+  "language_type":"العربية",
+  "appTitle": "تطبيقي",
+  "welcomeMessage": "أهلا بك!",
+  "chooseLanguage": "اختر اللغة",
+  "arabic": "العربية",
+  "english": "الإنجليزية",
+  "login": "تسجيل الدخول",
+  "signup": "إنشاء حساب",
+  "logout": "تسجيل الخروج"
+}
