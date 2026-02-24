@@ -8,5 +8,9 @@
   "english": "English",
   "login": "Login",
   "signup": "Sign Up",
-  "logout": "Logout"
+  "logout": "Logout" ,
+  "lightTheme": "Light Theme",
+  "darkTheme": "Dark Theme" ,
+  "theme":"Theme",
+  "logout":"Logout"
 }

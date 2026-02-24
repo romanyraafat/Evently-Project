@@ -37,4 +37,13 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get logout => 'تسجيل الخروج';
+
+  @override
+  String get lightTheme => 'الثيم الفاتح';
+
+  @override
+  String get darkTheme => 'الثيم الغامق';
+
+  @override
+  String get theme => 'الثيم';
 }

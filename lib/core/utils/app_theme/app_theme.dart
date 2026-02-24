@@ -8,6 +8,7 @@ class AppTheme {
 
     primaryColor: AppColors.primary,
     textTheme: TextTheme(
+      
       headlineLarge: Styles.styleBold20.copyWith(color: AppColors.black),
     ),
     scaffoldBackgroundColor: AppColors.lightGray,
@@ -19,7 +20,10 @@ class AppTheme {
     textTheme: TextTheme(
       headlineLarge: Styles.styleBold20.copyWith(color: AppColors.lightGray),
     ),
-
+    bottomSheetTheme: BottomSheetThemeData(
+      backgroundColor: AppColors.dark
+    ),
     scaffoldBackgroundColor: AppColors.primaryDark,
+    
   );
 }

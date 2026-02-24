@@ -1,22 +1,21 @@
 import 'package:evently_project/core/utils/app_colors.dart';
-import 'package:evently_project/core/utils/app_theme/app_theme.dart';
 import 'package:evently_project/core/utils/styles.dart';
 import 'package:evently_project/l10n/app_localizations.dart';
-import 'package:evently_project/providers/app_language_provider.dart';
+import 'package:evently_project/providers/app_theme_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-class AppLanguageBottomSheet extends StatefulWidget {
-  const AppLanguageBottomSheet({super.key});
+class AppThemeBottomSheet extends StatefulWidget {
+  const AppThemeBottomSheet({super.key});
 
   @override
-  State<AppLanguageBottomSheet> createState() => _AppLanguageBottomSheetState();
+  State<AppThemeBottomSheet> createState() => _AppThemeBottomSheetState();
 }
 
-class _AppLanguageBottomSheetState extends State<AppLanguageBottomSheet> {
+class _AppThemeBottomSheetState extends State<AppThemeBottomSheet> {
   @override
   Widget build(BuildContext context) {
-    var appLanguageProvider = Provider.of<AppLanguageProvider>(context);
+    var appLanguageProvider = Provider.of<AppThemeProvider>(context);
     var h = MediaQuery.of(context).size.height;
     var w = MediaQuery.of(context).size.width;
 
@@ -27,15 +26,15 @@ class _AppLanguageBottomSheetState extends State<AppLanguageBottomSheet> {
         children: [
           InkWell(
             onTap: () {
-              //todo change app language to english.
-              context.read<AppLanguageProvider>().changeAppLanguage('en');
+              //todo change app appTheme to english.
+              context.read<AppThemeProvider>().changeThemeMode(ThemeMode.dark);
             },
-            child: appLanguageProvider.appLanguage == "en"
+            child: appLanguageProvider.appTheme == ThemeMode.dark
                 ? Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        AppLocalizations.of(context)!.english,
+                        AppLocalizations.of(context)!.darkTheme,
                         style: Styles.styleBold20.copyWith(
                           color: AppColors.blue,
                         ),
@@ -44,19 +43,19 @@ class _AppLanguageBottomSheetState extends State<AppLanguageBottomSheet> {
                     ],
                   )
                 : unSelectedWidget(
-                    language: AppLocalizations.of(context)!.english,
+                    appTheme: AppLocalizations.of(context)!.darkTheme,
                   ),
           ),
           SizedBox(height: h * .05),
           InkWell(
             onTap: () {
-              //todo change app language to arabic.
-              context.read<AppLanguageProvider>().changeAppLanguage('ar');
+              //todo change app appTheme to arabic.
+              context.read<AppThemeProvider>().changeThemeMode(ThemeMode.light);
             },
-            child: appLanguageProvider.appLanguage == "ar"
-                ? selectedWidget(language: AppLocalizations.of(context)!.arabic)
+            child: appLanguageProvider.appTheme == ThemeMode.light
+                ? selectedWidget(appTheme: AppLocalizations.of(context)!.lightTheme)
                 : unSelectedWidget(
-                    language: AppLocalizations.of(context)!.arabic,
+                    appTheme: AppLocalizations.of(context)!.lightTheme,
                   ),
           ),
         ],
@@ -64,13 +63,13 @@ class _AppLanguageBottomSheetState extends State<AppLanguageBottomSheet> {
     );
   }
 
-  Widget selectedWidget({required String language}) {
+  Widget selectedWidget({required String appTheme}) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Text(
           // AppLocalizations.of(context)!.english,
-          language,
+          appTheme,
           style: Styles.styleBold20.copyWith(color: AppColors.blue),
         ),
         Icon(Icons.check, color: AppColors.blue, size: 35),
@@ -78,10 +77,10 @@ class _AppLanguageBottomSheetState extends State<AppLanguageBottomSheet> {
     );
   }
 
-  Widget unSelectedWidget({required String language}) {
+  Widget unSelectedWidget({required String appTheme}) {
     return Text(
       // AppLocalizations.of(context)!.arabic,
-      language,
+      appTheme,
       style: Theme.of(context).textTheme.headlineLarge,
     );
   }

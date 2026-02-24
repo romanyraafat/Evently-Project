@@ -1,6 +1,6 @@
 {
-  "language":"اللغه",
-  "language_type":"العربية",
+  "language": "اللغه",
+  "language_type": "العربية",
   "appTitle": "تطبيقي",
   "welcomeMessage": "أهلا بك!",
   "chooseLanguage": "اختر اللغة",
@@ -8,5 +8,9 @@
   "english": "الإنجليزية",
   "login": "تسجيل الدخول",
   "signup": "إنشاء حساب",
-  "logout": "تسجيل الخروج"
+  "logout": "تسجيل الخروج",
+  "lightTheme": "الثيم الفاتح",
+  "darkTheme": "الثيم الغامق", 
+  "theme":"الثيم",
+  "logout":"تسجيل الخروج"
 }

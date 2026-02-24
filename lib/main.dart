@@ -3,15 +3,19 @@ import 'package:evently_project/core/utils/router/app_router.dart';
 import 'package:evently_project/core/utils/router/route_names.dart';
 import 'package:evently_project/l10n/app_localizations.dart';
 import 'package:evently_project/providers/app_language_provider.dart';
+import 'package:evently_project/providers/app_theme_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:provider/provider.dart';
 
 void main() {
   runApp(
-    ChangeNotifierProvider(
-      create: (context) => AppLanguageProvider(),
-      child:const MyApp(),
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => AppLanguageProvider()),
+        ChangeNotifierProvider(create: (_) => AppThemeProvider()),
+      ],
+      child: const MyApp(),
     ),
   );
 }
@@ -38,7 +42,7 @@ class MyApp extends StatelessWidget {
       onGenerateRoute: AppRouter.onGenerateRoute,
       theme: AppTheme.lightTheme,
       darkTheme: AppTheme.darkTheme,
-      themeMode: ThemeMode.light,
+      themeMode: context.watch<AppThemeProvider>().appTheme,
     );
   }
 }
